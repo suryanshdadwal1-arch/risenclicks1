@@ -8,7 +8,7 @@ import { Check, CheckCircle2, Send, ArrowRight, Loader2, Sparkles, ClipboardList
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import TextureBackground from "../../components/TextureBackground";
-import PixelGuide from "../../components/PixelGuide";
+
 
 export default function Build() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -100,12 +100,7 @@ export default function Build() {
             </div>
             
             <div className="mt-6 md:mt-0 flex items-center gap-3">
-              <PixelGuide 
-                state={formSubmitted ? "celebrate" : "idle"} 
-                size={44} 
-                message={formSubmitted ? "Submission success!" : "Click: Awaiting inputs..."} 
-                direction="left"
-              />
+              
             </div>
           </div>
 
@@ -486,7 +481,7 @@ export default function Build() {
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <PixelGuide state="celebrate" size={40} interactive={false} />
+                  
                   <div className="space-y-1">
                     <span className="text-[10px] font-mono text-primary-teal font-bold block">// Click: Ready for build!</span>
                     <span className="text-[9px] font-mono text-text-muted">Checklist below matches your status:</span>
@@ -552,3 +547,4 @@ export default function Build() {
     </TextureBackground>
   );
 }
+

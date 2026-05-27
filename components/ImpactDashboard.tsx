@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { metricsData } from "../data/metrics";
-import PixelGuide from "./PixelGuide";
+
 
 export default function ImpactDashboard() {
   const [animatedVals, setAnimatedVals] = useState({
@@ -205,7 +205,7 @@ export default function ImpactDashboard() {
           <div className="flex items-center justify-between border-t border-primary-teal/5 pt-2 mt-2">
             <span className="text-[8px] font-mono text-text-muted">SYS_ONLINE: VERIFIED_METRICS</span>
             <div className="flex items-center gap-2">
-              <PixelGuide state="tap" size={24} message="Proof, not promises." />
+              
               <span className="text-[9px] font-mono text-primary-teal">Tap Click to inspect</span>
             </div>
           </div>
@@ -214,3 +214,4 @@ export default function ImpactDashboard() {
     </div>
   );
 }
+

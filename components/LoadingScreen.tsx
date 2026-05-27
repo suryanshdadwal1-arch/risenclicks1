@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import PixelGuide from "./PixelGuide";
+
 
 export default function LoadingScreen({ onComplete }: { onComplete: () => void }) {
   const [stage, setStage] = useState<"snake" | "click" | "online" | "exit">("snake");
@@ -249,7 +249,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
           )}
           {stage === "click" && (
             <div className="flex items-center gap-2">
-              <PixelGuide state="tap" size={28} interactive={false} />
+              
               <span className="text-[11px] text-soft-cyan">Click active: Connecting...</span>
             </div>
           )}
@@ -279,3 +279,4 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
     </div>
   );
 }
+

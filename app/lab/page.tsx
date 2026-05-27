@@ -8,7 +8,7 @@ import { X, ArrowRight, BookOpen, Layers, Terminal, BookOpenCheck } from "lucide
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import TextureBackground from "../../components/TextureBackground";
-import PixelGuide from "../../components/PixelGuide";
+
 import { labPostsData, LabPost } from "../../data/labPosts";
 
 export default function Lab() {
@@ -87,7 +87,7 @@ export default function Lab() {
                 <span className="text-[8px] font-mono text-text-muted">RESEARCHER_NODE</span>
                 <span className="text-[10px] font-mono text-primary-teal">Active Status</span>
               </div>
-              <PixelGuide state="carry" size={48} message={clickMessage} direction="left" />
+              
             </div>
           </div>
 
@@ -262,3 +262,4 @@ export default function Lab() {
     </TextureBackground>
   );
 }
+

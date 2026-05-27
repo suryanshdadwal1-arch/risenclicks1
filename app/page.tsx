@@ -14,8 +14,7 @@ import {
   AlertTriangle,
   FolderOpen,
   Eye,
-  Zap,
-  Play
+  Zap
 } from "lucide-react";
 
 import Header from "../components/Header";
@@ -23,7 +22,7 @@ import Footer from "../components/Footer";
 import TextureBackground from "../components/TextureBackground";
 import LoadingScreen from "../components/LoadingScreen";
 import ImpactDashboard from "../components/ImpactDashboard";
-import PixelGuide, { ClickState } from "../components/PixelGuide";
+
 import { servicesData } from "../data/services";
 import { caseStudiesData } from "../data/caseStudies";
 import { portfolioData, PortfolioItem } from "../data/portfolio";
@@ -32,8 +31,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("All");
   const [filteredPortfolio, setFilteredPortfolio] = useState<PortfolioItem[]>([]);
-  const [ctaHovered, setCtaHovered] = useState(false);
-  const [finalCtaHovered, setFinalCtaHovered] = useState(false);
+
 
   // Filter portfolio preview items based on active tab
   useEffect(() => {
@@ -76,6 +74,7 @@ export default function Home() {
     <TextureBackground>
       <Header />
 
+
       <main className="flex-grow pt-24 pb-20">
         
         {/* ================= SECTION 1: HERO ================= */}
@@ -84,10 +83,9 @@ export default function Home() {
             
             {/* Left Column */}
             <div className="lg:col-span-7 space-y-6 text-left">
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary-teal animate-ping" />
-                <span className="text-[10px] font-mono tracking-widest text-primary-teal uppercase border border-primary-teal/20 px-2.5 py-0.5 rounded bg-primary-teal/5">
-                  Creative Systems Lab
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-[12px] font-medium tracking-widest text-primary-teal uppercase">
+                  Creative Marketing Agency
                 </span>
               </div>
               
@@ -105,8 +103,6 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
                 <Link
                   href="/build"
-                  onMouseEnter={() => setCtaHovered(true)}
-                  onMouseLeave={() => setCtaHovered(false)}
                   className="flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-primary-teal to-soft-cyan text-main-bg text-sm font-display font-bold rounded shadow-glow shadow-primary-teal/10 hover:shadow-primary-teal/25 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200"
                 >
                   Let’s Build
@@ -121,8 +117,7 @@ export default function Home() {
               </div>
 
               <div className="flex items-center gap-3 pt-2">
-                <span className="text-[9px] font-mono text-text-muted">// Micro-line:</span>
-                <span className="text-[9px] font-mono text-primary-teal bg-primary-teal/5 border border-primary-teal/10 px-2 py-0.5 rounded">
+                <span className="text-xs font-medium text-text-muted">
                   Built for execution. Not just appearance.
                 </span>
               </div>
@@ -130,16 +125,6 @@ export default function Home() {
 
             {/* Right Column */}
             <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
-              {/* Click interacting with hero headline/dashboard */}
-              <div className="absolute -top-16 right-4 sm:right-16 z-20 flex items-center gap-2">
-                <PixelGuide 
-                  state={ctaHovered ? "point" : "carry"} 
-                  direction="left"
-                  size={52} 
-                  message={ctaHovered ? "Start Build!" : "Let's fix it!"}
-                />
-              </div>
-              
               {/* Dashboard Snapshot */}
               <div className="w-full">
                 <ImpactDashboard />
@@ -155,10 +140,7 @@ export default function Home() {
         {/* ================= SECTION 3: PROBLEM ================= */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 border-t border-primary-teal/10">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 text-coral-warn bg-coral-warn/5 border border-coral-warn/20 px-3 py-1 rounded-full text-[10px] font-mono">
-              <AlertTriangle size={12} />
-              <span>DIAGNOSTIC_WARNING: CONVERSION_LEAK</span>
-            </div>
+
             
             <h2 className="text-3xl sm:text-4xl font-display font-bold leading-tight tracking-tight">
               Most brands are getting attention. <br />
@@ -174,9 +156,9 @@ export default function Home() {
         {/* ================= SECTION 4: WHERE GROWTH BREAKS ================= */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
           <div className="text-center mb-12">
-            <h3 className="text-xs font-mono tracking-widest text-primary-teal uppercase">// Friction Points</h3>
+            <h3 className="text-sm font-medium tracking-widest text-primary-teal uppercase">Friction Points</h3>
             <h2 className="text-2xl sm:text-3xl font-display font-bold mt-2">Where Growth Breaks</h2>
-            <p className="text-xs font-mono text-text-muted mt-1">Attention is easy. Conversion is the work.</p>
+            <p className="text-sm text-text-muted mt-2">Attention is easy. Conversion is the work.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -193,27 +175,16 @@ export default function Home() {
               >
                 <div>
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-xs font-mono text-primary-teal/40 group-hover:text-primary-teal">{card.num}</span>
-                    <span className="text-[8px] font-mono text-coral-warn bg-coral-warn/5 border border-coral-warn/25 px-1.5 py-0.5 rounded">
-                      {card.status}
-                    </span>
+                    <span className="text-xs font-medium text-primary-teal/60 group-hover:text-primary-teal">{card.num}</span>
                   </div>
                   <h4 className="text-base font-display font-bold mb-2 text-text-primary">{card.title}</h4>
                   <p className="text-xs text-text-muted leading-relaxed">{card.desc}</p>
                 </div>
-                <div className="border-t border-primary-teal/10 mt-4 pt-3 flex items-center justify-between text-[9px] font-mono text-text-muted">
-                  <span>AUDIT: INCOMPLETE</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-coral-warn" />
-                </div>
+
               </div>
             ))}
           </div>
 
-          {/* Click inspecting the leaks */}
-          <div className="mt-8 flex justify-center items-center gap-4">
-            <PixelGuide state="fix" size={32} message="Patching funnel leak..." />
-            <span className="text-[10px] font-mono text-primary-teal">// Click: Funnel leak patched. Clicks locked.</span>
-          </div>
         </section>
 
         {/* ================= SECTION 5: RESULTS SNAPSHOT ================= */}
@@ -221,9 +192,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-4 space-y-6">
-              <div className="inline-block text-[9px] font-mono text-primary-teal border border-primary-teal/20 px-2 py-0.5 rounded bg-primary-teal/5">
-                EXECUTION_DOSSIER
-              </div>
+
               <h2 className="text-3xl font-display font-bold leading-tight">
                 This Isn’t Theory. <br />
                 <span className="text-primary-teal">This Is Execution.</span>
@@ -267,8 +236,7 @@ export default function Home() {
               <h3 className="text-xs font-mono tracking-widest text-primary-teal uppercase">// Proof Folder</h3>
               <h2 className="text-2xl sm:text-3xl font-display font-bold mt-2">Campaign Archives</h2>
             </div>
-            <div className="mt-4 md:mt-0 flex items-center gap-3">
-              <PixelGuide state="carry" size={32} message="Opening Results!" />
+            <div className="mt-4 md:mt-0">
               <Link 
                 href="/results" 
                 className="text-xs font-mono text-text-muted hover:text-primary-teal transition-colors flex items-center gap-1"
@@ -332,8 +300,7 @@ export default function Home() {
               <h3 className="text-xs font-mono tracking-widest text-primary-teal uppercase">// Creative built to convert</h3>
               <h2 className="text-2xl sm:text-3xl font-display font-bold mt-2">What Make It Sell Looks Like</h2>
             </div>
-            <div className="mt-4 md:mt-0 flex items-center gap-2">
-              <PixelGuide state="point" size={32} />
+            <div className="mt-4 md:mt-0">
               <Link 
                 href="/work" 
                 className="text-xs font-mono text-primary-teal border border-primary-teal/20 hover:border-primary-teal px-4 py-2 rounded bg-primary-teal/5 transition-all"
@@ -372,7 +339,7 @@ export default function Home() {
                     <img 
                       src={item.imagePath} 
                       alt={item.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
                   ) : (
@@ -569,7 +536,10 @@ export default function Home() {
             <div className="lg:col-span-5 relative flex items-center justify-center">
               <div className="p-8 border border-primary-teal/20 bg-card-surf rounded-2xl w-full text-center relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary-teal via-soft-cyan to-transparent" />
-                <PixelGuide state="idle" size={64} message="No fluff detected." className="mx-auto" />
+                {/* System status panel instead of character - character lives fixed on screen */}
+                <div className="w-16 h-16 mx-auto rounded-xl border border-primary-teal/30 bg-primary-teal/5 flex items-center justify-center mb-4">
+                  <span className="text-2xl font-display font-bold text-primary-teal">RnC</span>
+                </div>
                 <h4 className="font-display font-bold text-lg mt-4 text-primary-teal">Rise n Clicks Lab</h4>
                 <p className="text-xs text-text-muted mt-1 font-mono">// code: creative_growth_systems</p>
                 <div className="mt-6 flex justify-center gap-1.5">
@@ -617,24 +587,11 @@ export default function Home() {
             <div className="pt-4 flex justify-center items-center gap-4 relative">
               <Link
                 href="/build"
-                onMouseEnter={() => setFinalCtaHovered(true)}
-                onMouseLeave={() => setFinalCtaHovered(false)}
-                className={`flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-teal to-soft-cyan text-main-bg text-sm font-display font-bold rounded shadow-glow shadow-primary-teal/10 hover:shadow-primary-teal/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 ${
-                  finalCtaHovered ? "ring-2 ring-primary-teal" : ""
-                }`}
+                className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-teal to-soft-cyan text-main-bg text-sm font-display font-bold rounded shadow-glow shadow-primary-teal/10 hover:shadow-primary-teal/30 hover:scale-[1.02] hover:ring-2 hover:ring-primary-teal active:scale-[0.98] transition-all duration-200"
               >
                 Let’s Build
                 <ArrowRight size={16} />
               </Link>
-            </div>
-
-            <div className="flex justify-center pt-2">
-              <PixelGuide 
-                state={finalCtaHovered ? "celebrate" : "tap"} 
-                size={42} 
-                message={finalCtaHovered ? "Start Build!" : "Let's build together!"}
-                interactive={false}
-              />
             </div>
           </div>
         </section>

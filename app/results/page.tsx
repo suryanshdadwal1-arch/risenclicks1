@@ -7,7 +7,7 @@ import { ArrowRight, CheckCircle2, TrendingUp, Info, Check } from "lucide-react"
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import TextureBackground from "../../components/TextureBackground";
-import PixelGuide from "../../components/PixelGuide";
+
 import { caseStudiesData } from "../../data/caseStudies";
 
 export default function Results() {
@@ -37,7 +37,7 @@ export default function Results() {
             
             {/* Guide character Click */}
             <div className="mt-6 md:mt-0 flex items-center gap-3">
-              <PixelGuide state="point" size={44} message="Proof, not promises." direction="left" />
+              
               <span className="text-[9px] font-mono text-primary-teal bg-primary-teal/5 border border-primary-teal/10 px-2 py-1 rounded">
                 // tracking: verified
               </span>
@@ -199,3 +199,4 @@ export default function Results() {
     </TextureBackground>
   );
 }
+

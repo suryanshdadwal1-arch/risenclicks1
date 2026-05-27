@@ -94,9 +94,7 @@ export default function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <span className="text-[9px] font-mono text-primary-teal/80 border border-primary-teal/20 px-2 py-0.5 rounded bg-primary-teal/5">
-              SYSTEM ONLINE
-            </span>
+
             <Link
               href="/build"
               className="flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-primary-teal to-soft-cyan text-main-bg text-xs font-display font-bold rounded hover:shadow-glow hover:shadow-primary-teal/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
@@ -155,9 +153,7 @@ export default function Header() {
                   Let’s Build
                   <ArrowRight size={14} />
                 </Link>
-                <div className="text-center text-[9px] font-mono text-text-muted">
-                  // rnc_status: active_and_online
-                </div>
+
               </div>
             </div>
           </motion.div>

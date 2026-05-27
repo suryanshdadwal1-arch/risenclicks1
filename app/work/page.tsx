@@ -8,7 +8,7 @@ import { X, ArrowRight, Eye, FolderOpen, AlertCircle } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import TextureBackground from "../../components/TextureBackground";
-import PixelGuide from "../../components/PixelGuide";
+
 import { portfolioData, PortfolioItem } from "../../data/portfolio";
 
 export default function Work() {
@@ -85,12 +85,7 @@ export default function Work() {
 
             {/* Click peeking and greeting */}
             <div className="mt-6 md:mt-0 flex items-center gap-3">
-              <PixelGuide 
-                state={hoveredCardId ? "blink" : "idle"} 
-                size={44} 
-                message={clickMessage} 
-                direction="left"
-              />
+              
               <span className="text-[9px] font-mono text-primary-teal bg-primary-teal/5 border border-primary-teal/10 px-2 py-1 rounded">
                 // status: folder_opened
               </span>
@@ -127,7 +122,7 @@ export default function Work() {
                   {/* Click peeking element when card hovered */}
                   {hoveredCardId === item.id && (
                     <div className="absolute top-2 right-2 z-20 scale-75 animate-bounce">
-                      <PixelGuide state="point" size={24} interactive={false} direction="left" />
+                      
                     </div>
                   )}
 
@@ -137,7 +132,7 @@ export default function Work() {
                       <img
                         src={item.imagePath}
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                        className="w-full h-full object-contain p-2 group-hover:scale-[1.03] transition-transform duration-500"
                         loading="lazy"
                       />
                     ) : (
@@ -305,3 +300,4 @@ export default function Work() {
     </TextureBackground>
   );
 }
+

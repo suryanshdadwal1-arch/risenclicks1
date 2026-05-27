@@ -138,6 +138,18 @@ export const portfolioData: PortfolioItem[] = [
 
   // PEST
   {
+    id: "pest-first",
+    title: "Premium Pest Control Solution",
+    category: "Pest Control",
+    categories: ["Pest Control", "Local Services", "Ads"],
+    imagePath: "/assest/PEST/WhatsApp Image 2026-05-26 at 4.32.46 AM.jpeg",
+    format: "Image",
+    goal: "High-intent service bookings",
+    status: "Client Work",
+    objective: "Highlight complete eradication and long-term prevention of household pests.",
+    direction: "Bold typography, clear benefit layout, immediate phone call CTA."
+  },
+  {
     id: "pest-1",
     title: "Termite Barrier Defense",
     category: "Pest Control",

@@ -118,7 +118,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable} h-full antialiased text-text-primary bg-main-bg selection:bg-primary-teal/30 selection:text-white`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable} h-full antialiased text-text-primary bg-main-bg selection:bg-primary-teal/20 selection:text-primary-teal`}
       >
         {children}
       </body>
